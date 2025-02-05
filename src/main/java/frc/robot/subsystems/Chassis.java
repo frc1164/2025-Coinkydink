@@ -6,12 +6,12 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.driveConstants;
+
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.motorcontrol.MotorController;
-import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
+
 
 
 
@@ -47,16 +47,25 @@ public class Chassis extends SubsystemBase {
 
     leftBack.follow(leftFront);
     rightBack.follow(rightFront);
-
-
-
-
   }
 
 
+  public void leftSpeed(double speed) {
+    leftFront.set(ControlMode.PercentOutput, speed);
 
+  }
 
+  public void rightSpeed(double speed) {
+    rightFront.set(ControlMode.PercentOutput, speed);
 
+  }
+
+  public void changeGear(boolean isHigh) {
+    leftLow.set(!isHigh);
+    rightLow.set(!isHigh);
+    leftHigh.set(isHigh);
+    rightHigh.set(isHigh);
+  }
 
 
 

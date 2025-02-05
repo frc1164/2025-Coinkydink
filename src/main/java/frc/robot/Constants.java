@@ -4,7 +4,6 @@
 
 package frc.robot;
 
-import java.net.http.HttpResponse.PushPromiseHandler;
 
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 
@@ -45,7 +44,6 @@ public final class Constants {
   }
 
   public static final class joyStcikConstants {
-    public static final int stickPort = 0;
     public static final int y_Axis = 1;
     public static final int x_Axis = 0;
     public static final int rotate = 2;
@@ -55,7 +53,10 @@ public final class Constants {
     public static final int fuelCellSol = 4;
   }
 
-
+  public static final class OperatorConstants {
+    public static final int kDriverControllerPort = 0;
+    public static final int kOperatorControllerPort = 1;
+  }
 
 
 }
